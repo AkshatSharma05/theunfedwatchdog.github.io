@@ -2,60 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on The Unfed Watchdog</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>https://akshatsharma05.github.io/posts/</link>
     <description>Recent content in Posts on The Unfed Watchdog</description>
     <image>
       <title>The Unfed Watchdog</title>
-      <url>http://localhost:1313/logo.png</url>
-      <link>http://localhost:1313/logo.png</link>
+      <url>https://akshatsharma05.github.io/logo.png</url>
+      <link>https://akshatsharma05.github.io/logo.png</link>
     </image>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 19 May 2026 01:08:05 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://akshatsharma05.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bare-Metal &#34;Hello World&#34; on RISC-V - Part 2</title>
-      <link>http://localhost:1313/posts/riscv-2/</link>
+      <link>https://akshatsharma05.github.io/posts/riscv-2/</link>
       <pubDate>Tue, 19 May 2026 01:08:05 +0530</pubDate>
-      <guid>http://localhost:1313/posts/riscv-2/</guid>
-      <description>&lt;h2 id=&#34;project-structure&#34;&gt;Project Structure&lt;/h2&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;riscv-uart/
-├── Makefile       # Build rules and QEMU invocation
-├── start.S        # Assembly entry point (_start)
-├── linker.ld      # Memory map and section placement
-└── main.c         # The C &amp;#34;application&amp;#34;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Four files. That is the entire project. Each one plays a distinct, irreplaceable role.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;the-makefile&#34;&gt;The Makefile&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-makefile&#34; data-lang=&#34;makefile&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CC&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; riscv64-unknown-elf-gcc
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CFLAGS&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    -march&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;rv32i &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    -mabi&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;ilp32 &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    -nostdlib &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    -ffreestanding
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;all&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;CC&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;CFLAGS&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        start.S main.c &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        -T linker.ld &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        -o kernel.elf
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;run&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    qemu-system-riscv32 &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        -machine virt &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        -nographic &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        -bios none &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        -kernel kernel.elf
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;dissecting-the-flags&#34;&gt;Dissecting the flags&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;-march=rv32i&lt;/code&gt;&lt;/strong&gt; — Target the RV32I instruction set. The compiler will only emit instructions from this subset. Using a 64-bit instruction on a 32-bit target would be a hard error.&lt;/p&gt;</description>
+      <guid>https://akshatsharma05.github.io/posts/riscv-2/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s actually build the thing&lt;/p&gt;</description>
     </item>
     <item>
       <title>Bare-Metal &#34;Hello World&#34; on RISC-V - Part 1</title>
-      <link>http://localhost:1313/posts/riscv-1/</link>
+      <link>https://akshatsharma05.github.io/posts/riscv-1/</link>
       <pubDate>Tue, 19 May 2026 00:51:05 +0530</pubDate>
-      <guid>http://localhost:1313/posts/riscv-1/</guid>
-      <description>Learn the fundamentals of bare-metal programming on RISC-V with a hands-on hello world example.</description>
+      <guid>https://akshatsharma05.github.io/posts/riscv-1/</guid>
+      <description>&lt;p&gt;Everything your OS hides from you, laid bare&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -9,17 +9,17 @@
 <meta name="keywords" content="">
 <meta name="description" content="Posts - The Unfed Watchdog">
 <meta name="author" content="Akshat Sharma">
-<link rel="canonical" href="http://localhost:1313/posts/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.b6daf5b290d9d5ae0c9563cfcdf9c6cf9dc091ee8d9d3d3c101f5a693c340585.css" integrity="sha256-ttr1spDZ1a4MlWPPzfnGz53Ake6NnT08EB9aaTw0BYU=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="canonical" href="https://akshatsharma05.github.io/posts/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.9da316d8bf339154c7305baf88b05cccd43c085b0ccf953e676c73926cf6cb54.css" integrity="sha256-naMW2L8zkVTHMFuviLBczNQ8CFsMz5U&#43;Z2xzkmz2y1Q=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://akshatsharma05.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://akshatsharma05.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://akshatsharma05.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://akshatsharma05.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://akshatsharma05.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/posts/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/">
+<link rel="alternate" type="application/rss+xml" href="https://akshatsharma05.github.io/posts/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="https://akshatsharma05.github.io/posts/">
 <noscript>
     <style>
         #theme-toggle,
@@ -65,16 +65,16 @@
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script><meta property="og:url" content="http://localhost:1313/posts/">
+</script><meta property="og:url" content="https://akshatsharma05.github.io/posts/">
   <meta property="og:site_name" content="The Unfed Watchdog">
   <meta property="og:title" content="Posts">
   <meta property="og:description" content="Personal blog of Akshat Sharma">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
-      <meta property="og:image" content="http://localhost:1313/logo.png">
+      <meta property="og:image" content="https://akshatsharma05.github.io/logo.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="http://localhost:1313/logo.png">
+  <meta name="twitter:image" content="https://akshatsharma05.github.io/logo.png">
   <meta name="twitter:title" content="Posts">
   <meta name="twitter:description" content="Personal blog of Akshat Sharma">
 
@@ -88,7 +88,7 @@
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "http://localhost:1313/posts/"
+      "item": "https://akshatsharma05.github.io/posts/"
     }
   ]
 }
@@ -98,7 +98,7 @@
     <header class="header">
     <nav class="header-nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="The Unfed Watchdog (Alt + H)">The Unfed Watchdog</a>
+            <a href="https://akshatsharma05.github.io/" accesskey="h" title="The Unfed Watchdog (Alt + H)">The Unfed Watchdog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
@@ -124,7 +124,7 @@
         </div>
         <ul id="menu" class="menu">
             <li>
-                <a href="http://localhost:1313/search/" title="Search">
+                <a href="https://akshatsharma05.github.io/search/" title="Search">
                     <span>Search</span>
                 </a>
             </li>
@@ -145,39 +145,44 @@
 </header>
 
 <article class="post-entry"> 
+<figure class="entry-cover">
+        <img loading="lazy" src="https://akshatsharma05.github.io/images/riscv/thumb.png" alt="Bare-metal RISC-V setup">
+</figure>
   <header class="entry-header">
     <h2 class="entry-hint-parent">Bare-Metal &#34;Hello World&#34; on RISC-V - Part 2
     </h2>
   </header>
   <div class="entry-content">
-    <p>Project Structure riscv-uart/ ├── Makefile # Build rules and QEMU invocation ├── start.S # Assembly entry point (_start) ├── linker.ld # Memory map and section placement └── main.c # The C &#34;application&#34; Four files. That is the entire project. Each one plays a distinct, irreplaceable role.
-The Makefile CC = riscv64-unknown-elf-gcc CFLAGS = \ -march=rv32i \ -mabi=ilp32 \ -nostdlib \ -ffreestanding all: $(CC) $(CFLAGS) \ start.S main.c \ -T linker.ld \ -o kernel.elf run: qemu-system-riscv32 \ -machine virt \ -nographic \ -bios none \ -kernel kernel.elf Dissecting the flags -march=rv32i — Target the RV32I instruction set. The compiler will only emit instructions from this subset. Using a 64-bit instruction on a 32-bit target would be a hard error.
+    <p>Let’s actually build the thing
 ...</p>
   </div>
   <footer class="entry-footer">
 
-<span title='2026-05-19 01:08:05 +0530 IST'>May 19, 2026</span>&nbsp;·&nbsp;<span>8 min</span>&nbsp;·&nbsp;<span>Akshat</span></footer>
-  <a class="entry-link" aria-label="post link to Bare-Metal &#34;Hello World&#34; on RISC-V - Part 2" href="http://localhost:1313/posts/riscv-2/"></a>
+<span title='2026-05-19 01:08:05 +0530 IST'>May 19, 2026</span>&nbsp;·&nbsp;<span>7 min</span>&nbsp;·&nbsp;<span>Akshat</span></footer>
+  <a class="entry-link" aria-label="post link to Bare-Metal &#34;Hello World&#34; on RISC-V - Part 2" href="https://akshatsharma05.github.io/posts/riscv-2/"></a>
 </article>
 
 <article class="post-entry"> 
+<figure class="entry-cover">
+        <img loading="lazy" src="https://akshatsharma05.github.io/images/riscv/thumb.png" alt="Bare-metal RISC-V setup">
+</figure>
   <header class="entry-header">
     <h2 class="entry-hint-parent">Bare-Metal &#34;Hello World&#34; on RISC-V - Part 1
     </h2>
   </header>
   <div class="entry-content">
-    <p>What Does “Bare-Metal” Mean? When you write a normal C program on your laptop, a surprising amount of invisible machinery is helping you out. Your operating system loads your binary into memory. The C runtime initializes global variables and sets up the stack before main() ever runs. The standard library (libc) provides printf, malloc, strlen, and hundreds of other functions. The OS handles keyboard input, screen output, file access, and process management.
+    <p>Everything your OS hides from you, laid bare
 ...</p>
   </div>
   <footer class="entry-footer">
 
-<span title='2026-05-19 00:51:05 +0530 IST'>May 19, 2026</span>&nbsp;·&nbsp;<span>14 min</span>&nbsp;·&nbsp;<span>Akshat</span></footer>
-  <a class="entry-link" aria-label="post link to Bare-Metal &#34;Hello World&#34; on RISC-V - Part 1" href="http://localhost:1313/posts/riscv-1/"></a>
+<span title='2026-05-19 00:51:05 +0530 IST'>May 19, 2026</span>&nbsp;·&nbsp;<span>13 min</span>&nbsp;·&nbsp;<span>Akshat</span></footer>
+  <a class="entry-link" aria-label="post link to Bare-Metal &#34;Hello World&#34; on RISC-V - Part 1" href="https://akshatsharma05.github.io/posts/riscv-1/"></a>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="http://localhost:1313/">The Unfed Watchdog</a></span> · 
+        <span>&copy; 2026 <a href="https://akshatsharma05.github.io/">The Unfed Watchdog</a></span> · 
 
     
     
